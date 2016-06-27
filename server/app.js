@@ -14,11 +14,18 @@ app.get( '/', function( req, res ){
   res.sendFile( path.resolve( 'views/index.html' ) );
 });
 
+// return all mangoes
+app.get( '/getMangoes', function( req, res ){
+  console.log( 'in getMangoes' );
+  returnedModel.find().then( function( data ){
+    res.send( data );
+  }); // end find model
+});
+
 // spin up server
 app.listen( 8082, 'localhost', function( req, res ){
   console.log( 'server up on 8082' );
 });
-
 
 // add mango route
 app.post( '/addMango', function( req, res ){
@@ -31,6 +38,7 @@ app.post( '/addMango', function( req, res ){
   };
   var newMango=returnedModel( objectToSave );
   newMango.save();
+  res.send( true );
 });
 
 // static folder set to public

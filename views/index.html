@@ -14,10 +14,15 @@
       <input type="text" ng-model='nameIn' value="" placeholder="Mango Name">
       <input type="text" ng-model='weightIn' value="" placeholder="Weight">
       <button ng-click='saveMango()'>Save Mango</button>
+      <h2>These are our Mangoes</h2>
+      <!-- HA HA deeeeev, YOU LOSE -->
+      <p ng-repeat='mango in mangoes'>{{ mango.name }}, {{ mango.weight }}</p>
+
     </div>
     <!-- this model is available as $scope.MODELNAME in all controllers (we think, testing needed) -->
     <!-- <input type="text" ng-model='notATextArea' value="" placeholder="2 way tester">
     {{ notATextArea }} -->
 
+  <!-- HA HA HENRY   -->
   </body>
 </html>
