@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='myApp'>
   <head>
     <meta charset="utf-8">
     <title>MEAN stack in class review</title>
@@ -8,5 +8,14 @@
   </head>
   <body>
     <h1>MEAN stack in class review</h1>
+
+    <div ng-controller='mondayController'>
+      <button ng-click='whatAreWeTryingToDo()'>Check Input</button>
+    </div>
+
+    <!-- this model is available as $scope.MODELNAME in all controllers (we think, testing needed) -->
+    <input type="text" ng-model='notATextArea' value="" placeholder="2 way tester">
+    {{ notATextArea }}
+
   </body>
 </html>
