@@ -19,5 +19,19 @@ app.listen( 8082, 'localhost', function( req, res ){
   console.log( 'server up on 8082' );
 });
 
+
+// add mango route
+app.post( '/addMango', function( req, res ){
+  // check that data is coming through
+  console.log( 'in addMango: ' + req.body.name );
+  // save new record to db
+  var objectToSave={
+    name: req.body.name,
+    weight: req.body.weight
+  };
+  var newMango=returnedModel( objectToSave );
+  newMango.save();
+});
+
 // static folder set to public
 app.use( express.static( 'public' ) );

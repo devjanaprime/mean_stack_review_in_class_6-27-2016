@@ -11,12 +11,13 @@
 
     <div ng-controller='mondayController'>
       <!-- this button, when moved out of controller scope will not work -->
-      <button ng-click='whatAreWeTryingToDo()'>Check Input</button>
+      <input type="text" ng-model='nameIn' value="" placeholder="Mango Name">
+      <input type="text" ng-model='weightIn' value="" placeholder="Weight">
+      <button ng-click='saveMango()'>Save Mango</button>
     </div>
-
     <!-- this model is available as $scope.MODELNAME in all controllers (we think, testing needed) -->
-    <input type="text" ng-model='notATextArea' value="" placeholder="2 way tester">
-    {{ notATextArea }}
+    <!-- <input type="text" ng-model='notATextArea' value="" placeholder="2 way tester">
+    {{ notATextArea }} -->
 
   </body>
 </html>
