@@ -1,6 +1,12 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+// needs to be here (prior to route declarations) as it global
+app.use( bodyParser.json() );
+var mongoose = require('mongoose');
+mongoose.connect( 'localhost:27017/myTastyMangoDB' );
+var returnedModel = require('../models/mongoModels.js');
 
 // base url
 app.get( '/', function( req, res ){
